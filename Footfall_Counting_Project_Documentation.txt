@@ -1,0 +1,58 @@
+Project Title: Footfall Counting in a Video
+
+Objective:
+Develop a program that accurately counts the number of unique individuals in a video, ensuring each person is counted only once.
+
+
+Project Components:
+
+1. Main Program (server.py):
+   - Responsible for initializing the Flask application and routing.
+   - Handles video processing and counting logic.
+   - Integrates the Detector, FootfallCounter, and LogUpdater classes.
+   - Contains routes for serving web pages, video feed, and API endpoints.
+
+2. Detector Class (detector.py):
+   - Utilizes a pre-trained YOLO model for object detection.
+   - Provides methods for detecting and tracking individuals in video frames.
+
+3. FootfallCounter Class (footfall_counter.py):
+   - Implements algorithms for counting footfalls and managing individual tracking.
+   - Calculates centroids, draws bounding boxes, and tracks individuals across frames.
+   - Detects individuals crossing a predefined line to count in and out movements.
+
+4. LogUpdater Class (log_updater.py):
+   - Handles logging and updating footfall counts in a CSV file.
+   - Provides methods for formatting log data and writing to the log file.
+
+5. Utility Functions (utils.py):
+   - Contains helper functions for generating video frames and other utilities.
+
+6. Configuration File (config.py):
+   - Stores configuration parameters such as model paths, video paths, and log file paths etc.
+
+7. Web Templates (templates/):
+   - Contains HTML templates for rendering web pages (e.g., index.html, video.html, logs.html).
+
+8. Static Files (static/):
+   - Contains static files such as CSS used in web pages.
+
+9. Installation Instructions:
+   - Clone the repository from [GitHub Repository URL].
+   - Install the required dependencies listed in the requirements.txt file.
+   - Set the appropriate paths for model files, video files, and log files in the config.py file.
+
+10. Running the Program:
+    - Execute the server.py file to start the Flask application.
+    - Access the application through a web browser using the provided URL.
+    - Navigate to the video page to view the video feed and footfall counts.
+    - Check the logs page for detailed footfall counting logs.
+
+11. Future Improvements:
+    - Implement more robust object tracking algorithms to handle occlusions and changing lighting conditions.
+    - Explore deep learning-based approaches for more accurate detection and tracking.
+    - Enhance the user interface with real-time analytics and visualization features.
+
+Conclusion:
+The footfall counting project demonstrates an efficient solution for accurately counting individuals in a video stream. By integrating object detection, tracking, and logging functionalities.. 
+
