@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footfall Counter</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="header">
+        <div class="index-button">
+            <a href="{{ url_for('video') }}" class="button video-button">Stream</a>  
+            <a href="{{ url_for('logs') }}" class="button log-button">Log</a>
+        </div> 
+    </div>
+    <div class="container">
+        <h1>Footfall Counter</h1>
+        <p>
+            <strong>Footfall Counter:</strong> A Video-based People Counting System
+        </p>
+        <h2>Overview:</h2>
+        <p>
+            Our project aims to develop a robust and efficient program for accurately counting the number of unique individuals in a video. The system detects and tracks individuals throughout the video, assigning a unique identifier to each person to ensure accurate counting.
+        </p>
+        <h2>Implementation:</h2>
+        <p>
+            We implemented the footfall counting system using Python along with the OpenCV library for video processing and computer vision tasks. The program accepts a video file as input and employs advanced object detection and tracking techniques to identify individuals appearing in the video. We utilized deep learning-based models for person detection and tracking, which allow for accurate identification and tracking. 
+        </p>
+        <h2>Key Features:</h2>
+        <ul>
+            <li>Accepts video files of various formats as input.</li>
+            <li>Utilizes state-of-the-art object detection and tracking with YOLOv8 model.</li>
+            <li>Assigns a unique identifier to each individual for accurate counting. </li> 
+            <li>Provides clear and comprehensive instructions for setting up and running the program, including installation of dependencies.</li>
+            <li>Creates a log of each frame to identify each frame with date, time, frame number, persons tracked in and out time, daily hours per person, total individuals detected, and total people inside.</li>
+        </ul>
+        <h2>How it Works:</h2>
+        <ol>
+            <li>The program reads the input video and processes each frame sequentially by yielding frames.</li>
+            <li>Each frame is resized and analyzed using the YOLO person detection model to identify individuals.</li>
+            <li>Detected individuals are tracked across frames and assigned to each individual to ensure accurate counting.</li>
+            <li>The total in and out footfall count, daily hours per person, and total people inside all available insights displayed as the output in a page using Flask.</li>
+        </ol>
+        <h2>Conclusion:</h2>
+        <p>
+            Our footfall counting system provides an effective solution for accurately counting the number of unique individuals in a video. The implementation showcases the capabilities of modern computer vision techniques and deep learning models in solving real-world problems efficiently.
+        </p>
+    </div>
+</body>
+</html>

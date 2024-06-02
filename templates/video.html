@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Stream</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <script>
+        function fetchCounts() {
+            fetch('/counts')
+                .then(response => response.json())
+                .then(data => {
+                    document.querySelector('.in-count .white-box').textContent = data.in_count;
+                    document.querySelector('.out-count .white-box').textContent = data.out_count;
+                })
+                .catch(error => console.error('Error fetching counts:', error));
+        }
+
+        setInterval(fetchCounts, 1000); // Fetch counts every second
+    </script>
+</head>
+<body>
+    <div class="header">
+        <a href="{{ url_for('index') }}" class="button">Back to Home</a>
+    </div>
+    <div class="container">
+        <div class="video-frame">
+            <img src="{{ url_for('video_feed') }}" class="video-stream" />
+            <div class="count-container">
+                <div class="in-count">IN Count   : <span class="white-box">{{ in_count }}</span></div>
+                <div class="out-count">Out Count: <span class="white-box">{{ out_count }}</span></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
